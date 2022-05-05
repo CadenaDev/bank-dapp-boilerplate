@@ -1,0 +1,24 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "HarlandLohora",
+      "name": "Harland Lohora",
+      "avatar_url": "https://avatars.githubusercontent.com/u/26666489?v=4",
+      "profile": "https://harlandlohora.com/",
+      "contributions": [
+        "bug"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "bank-dapp-boilerplate",
+  "projectOwner": "CadenaDev",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
