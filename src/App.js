@@ -12,12 +12,21 @@ function App() {
   const [customerAddress, setCustomerAddress] = useState(null);
   const [error, setError] = useState(null);
 
-  const contractAddress = 'YOUR_CONTRACT_ADDRESS';
+  const contractAddress = 0xC98b60906354089f3BD2B87213c23b5f136223C3;
   const contractABI = abi.abi;
 
   const checkIfWalletIsConnected = async () => {
     try {
-      //your code here
+      if (window.ethereum) {
+        const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+        const account = accounts[0];
+        setIsWalletConnected(true);
+        setCustomerAddress(account);
+        console.log("Account Connected: ", account);
+      } else {
+        setError("Please install a MetaMask wallet to use our bank.");
+        console.log("No MetaMask wallet detected.");
+      }
     } catch (error) {
       console.log(error);
     }
