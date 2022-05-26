@@ -12,7 +12,7 @@ function App() {
   const [customerAddress, setCustomerAddress] = useState(null);
   const [error, setError] = useState(null);
 
-  const contractAddress = 0xC98b60906354089f3BD2B87213c23b5f136223C3;
+  const contractAddress = 0x0a497BD6b315f38CAbC14600fBd5A98EEdb50e31;
   const contractABI = abi.abi;
 
   const checkIfWalletIsConnected = async () => {
@@ -121,8 +121,10 @@ function App() {
         const provider = new ethers.providers.Web3Provider(window.ethereum);
         const signer = provider.getSigner();
         const bankContract = new ethers.Contract(contractAddress, contractABI, signer);
-
+        console.log(signer);
+        
         const txn = await bankContract.depositMoney({ value: ethers.utils.parseEther(inputValue.deposit) });
+
         console.log("Deposting money...");
         await txn.wait();
         console.log("Deposited money...done", txn.hash);
