@@ -12,7 +12,7 @@ function App() {
   const [customerAddress, setCustomerAddress] = useState(null);
   const [error, setError] = useState(null);
 
-  const contractAddress = 0x0a497BD6b315f38CAbC14600fBd5A98EEdb50e31;
+  const contractAddress = "0x0a497BD6b315f38CAbC14600fBd5A98EEdb50e31";
   const contractABI = abi.abi;
 
   const checkIfWalletIsConnected = async () => {
@@ -151,7 +151,7 @@ function App() {
         let myAddress = await signer.getAddress();
         console.log("Provider signer...", myAddress);
 
-        const txn = await bankContract.withDrawMoney(myAddress, ethers.utils.parseEther(inputValue.withdraw));
+        const txn = await bankContract.withdrawMoney(myAddress, ethers.utils.parseEther(inputValue.withdraw));
         console.log("Withdrawing money...");
         await txn.wait();
         console.log("Money withdraw...done.", txn.hash);
