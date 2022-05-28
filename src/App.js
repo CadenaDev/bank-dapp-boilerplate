@@ -48,7 +48,7 @@ function App() {
     }
   }
 
-  const customerBalanceHanlder = async () => {
+  const customerBalanceHandler = async () => {
     try {
       //your code here
     } catch (error) {
@@ -80,7 +80,7 @@ function App() {
     checkIfWalletIsConnected();
     getBankName();
     getbankOwnerHandler();
-    customerBalanceHanlder()
+    customerBalanceHandler()
   }, [isWalletConnected])
 
   return (
